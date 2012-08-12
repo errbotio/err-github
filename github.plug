@@ -1,0 +1,7 @@
+[Core]
+Name = Github
+Module = github
+
+[Documentation]
+Description = bridge to github
+
