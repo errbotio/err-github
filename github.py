@@ -37,8 +37,8 @@ from errbot.botplugin import BotPlugin
 from errbot.builtins.webserver import webhook
 
 class Github(BotPlugin):
-    @webhook(r'/github-notifs/', form_param = 'payload')
-    def notification(self, payload):
+    @webhook(r'/github/', form_param = 'payload')
+    def gh_notifs(self, payload):
         msg = 'Github commits on %s:\n' % payload['repository']['name'] + '\n'.join(("%s: %s [ %s ] " % (commit['author']['name'], commit['message'], commit['url']) for commit in payload['commits']))
         self.send(CHATROOM_PRESENCE[0], msg, message_type='groupchat')
 
